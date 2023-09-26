@@ -10,6 +10,7 @@ var instance = require('./Razorpay');
 // app.use(bodyParser.json());
 app.use(express.json());
 const cors = require('cors');
+const path = require('path');
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
