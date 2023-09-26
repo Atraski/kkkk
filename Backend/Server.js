@@ -10,11 +10,11 @@ var instance = require('./Razorpay');
 // app.use(bodyParser.json());
 app.use(express.json());
 const cors = require('cors');
-const path = require('path');
+// const path = require('path');
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "../Frontend/build")))
+// app.use(express.static(path.join(__dirname, "../Frontend/build")))
 
 
 
