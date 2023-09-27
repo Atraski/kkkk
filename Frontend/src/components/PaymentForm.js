@@ -62,13 +62,13 @@ const checkout=async(amount)=>{
     localStorage.setItem('amount', amount); // Set the 'amount' in localStorage\
 try{
   if(Number.length === 10){
-  var data1 = await fetch("http://localhost:8000/Order",{
+  var data1 = await fetch("http://localhost:5000/Order",{
     method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({amount,name, email, Town, Number })
   })
  
-  var keys= await fetch("http://localhost:8000/key",{
+  var keys= await fetch("http://localhost:5000/key",{
     method: 'GET',
 
   })
@@ -96,7 +96,7 @@ else{
     description: "Test Transaction",
     // image: "https://example.com/your_logo",
     order_id: data1.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url: "http://localhost:8000/verification",
+    callback_url: "http://localhost:5000/verification",
     handler: function (response) {
       // Handle the payment success callback here
       console.log("Payment successful: ", response);
